@@ -1,0 +1,164 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 15% 20%, #e3edff 0, transparent 28rem),
+    radial-gradient(circle at 85% 80%, #e8e5ff 0, transparent 25rem),
+    #f4f7fb;
+}
+
+.tarjeta {
+  width: min(100%, 560px);
+  padding: clamp(32px, 8vw, 64px);
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e7ebf2;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgb(34 51 84 / 10%);
+}
+
+.etiqueta {
+  color: #5b63d3;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+
+p {
+  max-width: 36ch;
+  margin: 0 auto 28px;
+  color: #657087;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+button {
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: #5b63d3;
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  background: #484fb9;
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid #a8adff;
+  outline-offset: 3px;
+}
+
+.reloj {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 104px;
+  aspect-ratio: 1;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #fff 0 59%, transparent 60%),
+    repeating-conic-gradient(from -1deg, #9aa3b8 0deg 1deg, transparent 1deg 30deg),
+    #e8ecf5;
+  box-shadow: 0 5px 18px rgb(34 51 84 / 14%);
+}
+
+.aguja {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  display: block;
+  border-radius: 999px;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: center bottom;
+}
+
+.aguja-hora {
+  width: 5px;
+  height: 25%;
+  background: #172033;
+}
+
+.aguja-minuto {
+  width: 3px;
+  height: 36%;
+  background: #5b63d3;
+}
+
+.aguja-segundo {
+  width: 2px;
+  height: 40%;
+  background: #e25d67;
+}
+
+.reloj-centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  aspect-ratio: 1;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #e25d67;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  color: #7b8496;
+  font-size: 0.875rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .reloj {
+    bottom: 56px;
+    left: 16px;
+    width: 84px;
+  }
+
+  .aguja-hora {
+    height: 24%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
