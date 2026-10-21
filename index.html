@@ -3,17 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4f7fb">
-  <title>Mi primera página</title>
+  <meta name="theme-color" content="#f4f5f2">
+  <title>Motor & Ruta | Pasión por los coches</title>
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 <body>
-  <main class="tarjeta">
-    <span class="etiqueta">MI ESPACIO EN LA WEB</span>
-    <h1>¡Hola, mundo!</h1>
-    <p id="mensaje">Esta es mi primera página web. Me alegra que estés aquí.</p>
-    <button id="boton-saludo" type="button">Ver otro saludo</button>
+  <header class="cabecera">
+    <a class="marca" href="#inicio" aria-label="Motor y Ruta, inicio">
+      <span class="marca-icono" aria-hidden="true">M</span>
+      <span>MOTOR <span class="marca-amp">&</span> RUTA</span>
+    </a>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="#novedades">Novedades</a>
+      <a href="#coches">Coches</a>
+      <a href="#articulos">Artículos</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <button id="boton-tema" class="boton-tema" type="button" aria-pressed="false">
+      <span aria-hidden="true">☾</span>
+      <span class="texto-tema">Tema oscuro</span>
+    </button>
+  </header>
+
+  <main id="inicio">
+    <section class="portada" aria-labelledby="titulo-portada">
+      <div class="portada-contenido">
+        <p class="sobretitulo"><span></span> Historias sobre ruedas</p>
+        <h1 id="titulo-portada">La carretera<br>siempre <em>llama.</em></h1>
+        <p class="portada-descripcion">Novedades, pruebas y cultura del automóvil para quienes disfrutan cada kilómetro.</p>
+        <a class="boton boton-claro" href="#articulos">Explorar artículos <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="portada-arte" role="img" aria-label="Ilustración de un coche deportivo rojo en una carretera">
+        <div class="sol"></div>
+        <div class="linea-horizonte"></div>
+        <div class="montana montana-uno"></div>
+        <div class="montana montana-dos"></div>
+        <div class="carretera"></div>
+        <svg class="coche-portada" viewBox="0 0 720 300" aria-hidden="true">
+          <path class="sombra-coche" d="M84 219c14-18 38-29 72-37l58-17 69-78c17-19 38-30 65-33l111-12c31-3 55 4 78 24l82 70 53 17c17 5 28 17 33 34l8 31c3 13-6 24-20 24H99c-22 0-28-10-15-23Z"/>
+          <path class="ventana-coche" d="m300 94-59 67 251-4-58-66c-13-14-27-19-49-17l-48 4c-16 1-27 5-37 16Z"/>
+          <path class="detalle-coche" d="m496 93 63 67 75 18-66-58-40-27Z"/>
+          <path class="detalle-coche" d="m130 189 57-13-25 31h-42Z"/>
+          <path class="luz-coche" d="m604 184 40 9 7 17-45-4Z"/>
+          <path class="parachoques" d="m93 216 581 2-7 17H103c-12 0-16-8-10-19Z"/>
+          <circle class="rueda" cx="218" cy="225" r="48"/>
+          <circle class="llanta" cx="218" cy="225" r="22"/>
+          <circle class="rueda" cx="559" cy="225" r="48"/>
+          <circle class="llanta" cx="559" cy="225" r="22"/>
+        </svg>
+        <span class="arte-caption">DISEÑADO PARA DISFRUTAR EL CAMINO</span>
+      </div>
+      <span class="portada-indice" aria-hidden="true">01 / 04</span>
+    </section>
+
+    <section class="seccion seccion-novedades" id="novedades" aria-labelledby="titulo-novedades">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="sobretitulo"><span></span> Lo que se mueve</p>
+          <h2 id="titulo-novedades">En el radar</h2>
+        </div>
+        <p class="texto-lateral">El mundo del motor cambia rápido.<br>Estas son algunas claves para seguirle el ritmo.</p>
+      </div>
+      <div class="radar-grid">
+        <article class="radar-item">
+          <span class="numero">01</span>
+          <div><h3>La nueva era eléctrica</h3><p>Más autonomía, carga más sencilla y diseños que ponen la tecnología en el centro.</p></div>
+          <span class="flecha" aria-hidden="true">↗</span>
+        </article>
+        <article class="radar-item">
+          <span class="numero">02</span>
+          <div><h3>Clásicos que perduran</h3><p>Por qué las líneas atemporales y el cuidado artesanal siguen conquistando conductores.</p></div>
+          <span class="flecha" aria-hidden="true">↗</span>
+        </article>
+        <article class="radar-item">
+          <span class="numero">03</span>
+          <div><h3>La ruta como destino</h3><p>Escapadas, carreteras panorámicas y consejos para disfrutar cada parada.</p></div>
+          <span class="flecha" aria-hidden="true">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-coches" id="coches" aria-labelledby="titulo-coches">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="sobretitulo"><span></span> Encuentra tu estilo</p>
+          <h2 id="titulo-coches">Coches para cada ruta</h2>
+        </div>
+        <p class="texto-lateral">Cada coche cuenta una historia.<br>¿Cuál es la tuya?</p>
+      </div>
+      <div class="coches-grid">
+        <article class="coche-card">
+          <div class="coche-card-arte arte-urbano">
+            <span class="etiqueta-card">ÁGIL Y PRÁCTICO</span>
+            <svg viewBox="0 0 320 140" aria-hidden="true"><path d="m28 91 17-26 51-10 39-32c8-7 17-10 31-10h48c15 0 25 5 36 16l35 31 21 8 6 24H28Z"/><path class="ventana-mini" d="m111 59 31-26c5-4 11-7 21-7h30v33Z"/><circle class="rueda-mini" cx="88" cy="95" r="20"/><circle class="rueda-mini" cx="250" cy="95" r="20"/></svg>
+          </div>
+          <div class="coche-card-texto"><p class="categoria">01 — CIUDAD</p><h3>Compactos urbanos</h3><p>Pequeños por fuera, listos para todo lo que ofrece la ciudad.</p></div>
+        </article>
+        <article class="coche-card">
+          <div class="coche-card-arte arte-aventura">
+            <span class="etiqueta-card">LISTO PARA SALIR</span>
+            <svg viewBox="0 0 320 140" aria-hidden="true"><path d="m24 88 15-29 48-13 27-27c7-7 17-11 30-11h81c13 0 24 5 34 15l31 31 20 9 8 31H24Z"/><path class="ventana-mini" d="m105 53 24-25c4-4 10-7 18-7h32v33Z"/><path class="ventana-mini" d="M188 21h35c9 0 17 4 24 11l22 21h-81Z"/><circle class="rueda-mini" cx="82" cy="96" r="21"/><circle class="rueda-mini" cx="252" cy="96" r="21"/></svg>
+          </div>
+          <div class="coche-card-texto"><p class="categoria">02 — AVENTURA</p><h3>Todo terreno</h3><p>Espacio y confianza para cambiar el asfalto por nuevos paisajes.</p></div>
+        </article>
+        <article class="coche-card">
+          <div class="coche-card-arte arte-electrico">
+            <span class="etiqueta-card">OTRA FORMA DE AVANZAR</span>
+            <svg viewBox="0 0 320 140" aria-hidden="true"><path d="m25 89 17-25 50-10 41-25c9-6 20-9 33-9h59c13 0 23 4 34 13l31 27 20 8 8 29H25Z"/><path class="ventana-mini" d="m108 56 31-20c7-4 15-7 26-7h33v27Z"/><path class="ventana-mini" d="M208 29h16c9 0 17 3 24 9l24 18h-64Z"/><circle class="rueda-mini" cx="85" cy="96" r="20"/><circle class="rueda-mini" cx="255" cy="96" r="20"/></svg>
+          </div>
+          <div class="coche-card-texto"><p class="categoria">03 — ELÉCTRICO</p><h3>Movilidad eléctrica</h3><p>Una conducción silenciosa con la mirada puesta en el futuro.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-articulos" id="articulos" aria-labelledby="titulo-articulos">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="sobretitulo"><span></span> Lecturas de garaje</p>
+          <h2 id="titulo-articulos">Historias y consejos</h2>
+        </div>
+      </div>
+      <div class="articulos-grid">
+        <article class="articulo articulo-principal">
+          <div class="articulo-ilustracion ilustracion-ruta" aria-hidden="true"><span class="sol-articulo"></span><span class="montana-articulo"></span><span class="carretera-articulo"></span><span class="coche-articulo"></span></div>
+          <div class="articulo-info"><p class="categoria">RUTAS <span>·</span> 6 MIN DE LECTURA</p><h3>El placer de perderse por una carretera secundaria</h3><p>Sin prisa y con las ventanillas abajo: a veces el mejor plan es dejar que el camino te sorprenda.</p><a href="#nosotros" class="enlace-articulo">Leer artículo <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="articulo">
+          <div class="articulo-ilustracion ilustracion-garaje" aria-hidden="true"><span class="herramienta herramienta-uno"></span><span class="herramienta herramienta-dos"></span><span class="llanta-garaje"></span></div>
+          <div class="articulo-info"><p class="categoria">CUIDADOS <span>·</span> 4 MIN DE LECTURA</p><h3>Cuidados sencillos para alargar la vida de tu coche</h3><p>Pequeños hábitos de mantenimiento que ayudan a que cada viaje empiece con buen pie.</p><a href="#nosotros" class="enlace-articulo">Leer artículo <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="articulo">
+          <div class="articulo-ilustracion ilustracion-diseno" aria-hidden="true"><span class="circulo-diseno"></span><span class="linea-diseno"></span><span class="coche-diseno"></span></div>
+          <div class="articulo-info"><p class="categoria">DISEÑO <span>·</span> 5 MIN DE LECTURA</p><h3>Cuando el diseño convierte un coche en un icono</h3><p>Proporción, carácter y esos detalles que hacen que un modelo sea inolvidable.</p><a href="#nosotros" class="enlace-articulo">Leer artículo <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cierre" id="nosotros" aria-labelledby="titulo-cierre">
+      <p class="sobretitulo"><span></span> Para quienes disfrutan conduciendo</p>
+      <h2 id="titulo-cierre">No solo hablamos de coches.<br><em>Hablamos de lo que te hacen sentir.</em></h2>
+      <a class="boton boton-oscuro" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+    </section>
   </main>
 
   <div class="reloj" id="reloj" role="img" aria-label="Reloj analógico">
@@ -23,6 +154,10 @@
     <span class="reloj-centro"></span>
   </div>
 
-  <footer>Hecho con cariño · <span id="anio"></span></footer>
+  <footer class="pie">
+    <a class="marca marca-pie" href="#inicio">MOTOR <span class="marca-amp">&</span> RUTA</a>
+    <p>Una revista para disfrutar el camino. <span>© <span id="anio"></span></span></p>
+    <a href="#inicio" class="enlace-pie">Volver arriba ↑</a>
+  </footer>
 </body>
 </html>

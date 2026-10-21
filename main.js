@@ -1,19 +1,23 @@
-const mensaje = document.querySelector("#mensaje");
-const botonSaludo = document.querySelector("#boton-saludo");
 const anio = document.querySelector("#anio");
 const reloj = document.querySelector("#reloj");
 const agujaHora = document.querySelector("#aguja-hora");
 const agujaMinuto = document.querySelector("#aguja-minuto");
 const agujaSegundo = document.querySelector("#aguja-segundo");
-
-const saludos = [
-  "Esta es mi primera página web. Me alegra que estés aquí.",
-  "Gracias por visitarme. ¡Que tengas un día fantástico!"
-];
-
-let saludoActual = 0;
+const botonTema = document.querySelector("#boton-tema");
+const textoTema = botonTema.querySelector(".texto-tema");
+const iconoTema = botonTema.querySelector("[aria-hidden='true']");
+const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
 anio.textContent = new Date().getFullYear();
+
+botonTema.addEventListener("click", () => {
+  const temaOscuro = document.body.dataset.theme !== "dark";
+  document.body.dataset.theme = temaOscuro ? "dark" : "light";
+  textoTema.textContent = temaOscuro ? "Tema claro" : "Tema oscuro";
+  iconoTema.textContent = temaOscuro ? "☀" : "☾";
+  botonTema.setAttribute("aria-pressed", String(temaOscuro));
+  metaThemeColor.content = temaOscuro ? "#171a18" : "#f4f5f2";
+});
 
 function actualizarReloj() {
   const ahora = new Date();
@@ -29,8 +33,3 @@ function actualizarReloj() {
 
 actualizarReloj();
 window.setInterval(actualizarReloj, 1000);
-
-botonSaludo.addEventListener("click", () => {
-  saludoActual = (saludoActual + 1) % saludos.length;
-  mensaje.textContent = saludos[saludoActual];
-});
