@@ -1,4 +1,4 @@
-# Motor & Ruta
+# Motor & Ruta1
 
 Sitio web estático de estilo editorial dedicado al mundo del automóvil. Reúne novedades, categorías de coches y artículos sobre rutas, cuidados y diseño en una página adaptable a distintos tamaños de pantalla.
 
